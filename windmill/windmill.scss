@@ -1,0 +1,32 @@
+$firstColor: #0057b8;
+
+$listColors: #f11e4a, #f8a527, #266d7f, #82a, $firstColor;
+
+$delayCoeff: 0.5s;
+
+#svg{
+    animation: rotated 3s linear infinite;   
+    fill: $firstColor;
+}
+
+@for $i from 1 to 5 {
+    path:nth-child(#{$i}) {
+        animation: slices 3s linear $i * $delayCoeff infinite;
+    }
+}
+
+@keyframes slices {
+    @for $i from 1 to length($listColors) {
+        #{$i * 25}% {
+            fill: nth($listColors, $i);
+        }
+    }
+}
+
+@keyframes rotated {
+    @for $i from 0 through 4 {
+        #{$i * 25}% {
+            transform: rotate(#{$i * 90}deg);
+        }
+    }
+}
