@@ -1,0 +1,108 @@
+body {
+    background: #0057b8;
+}
+
+div {
+    box-sizing: border-box;
+}
+
+#background {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 3px solid #f0f0f0;
+    overflow: hidden;
+}
+
+#sky {
+    position: absolute;
+    width: 400px;
+    height: 300px;
+    left: -100px;
+    animation: sky 10s ease infinite;
+    transform: rotate(0deg);
+
+    @keyframes sky {
+        0% {transform: rotate(0deg);}
+        50% {transform: rotate(180deg);}
+        100% {transform: rotate(360deg);}
+    }
+}
+
+#night {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(0deg, #111A37, #204464);
+}
+
+#day {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(180deg, #BF4605, #E49B0A);
+}
+
+#moon {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #D9D8D0;
+    box-shadow: inset -4px 1px 0 0 #899098;
+    overflow: hidden;
+
+    div {
+        position: absolute;
+        background: rgb(187, 186, 181);
+        border-radius: 50%;
+        box-shadow: inset -4px 2px 0 0 grey;
+
+        &:nth-child(1) {
+            top: 12px;
+            left: 23px;
+            width: 15px;
+            height: 15px;
+        }
+
+        &:nth-child(2) {
+            width: 10px;
+            height: 10px;
+            top: 20px;
+            left: 5px;
+        }
+
+        &:nth-child(3) {
+            width: 10px;
+            height: 10px;
+            top: 36px;
+            left: 25px;
+        }
+    }
+}
+
+#sun {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #F2EF88;
+}
+
+#land {
+    position: absolute;
+    bottom: 0;
+    width: 200px;
+    height: 50px;
+    animation: land 10s ease infinite;
+
+    @keyframes land {
+        0% {background: #537790;}
+        50% {background: rgb(130, 131, 68);}
+        100% {background: #537790;}
+    }
+}
